@@ -26,18 +26,17 @@ const App = () => {
   }
 
   useEffect( () => {
-    getRecipes();
-    
- 
-  }, [query]);
+    getRecipes(); 
+   
+  },[query]);
 
   const updateSearch = e => {
     setSearch(e.target.value);
 
   }
 
-  const getSearch = e => {
-    e.preventDefault();
+  const getSearch = event => {
+    event.preventDefault();
     setQuery(search);
     setSearch('');
   };
