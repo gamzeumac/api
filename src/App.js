@@ -10,8 +10,7 @@ const App = () => {
   const [reciper, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken")
- 
-  console.log(process.env.REACT_APP_API_KEY)
+
 
 
    const getRecipes = async() => {
