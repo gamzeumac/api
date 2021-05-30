@@ -3,16 +3,15 @@ import Recipe from './Recipe';
 import './App.css';
 
 
-
 const App = () => {
 
-  const APP_ID = "318063c4";
-  const APP_KEY = "b72af0655ad3a4ede8bfd38bd461994f";
+  const APP_ID = process.env.REACT_APP_API_ID;
+  const APP_KEY = process.env.REACT_APP_API_KEY;
   const [reciper, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken")
  
-
+  console.log(process.env.REACT_APP_API_KEY)
 
 
    const getRecipes = async() => {
