@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from "react";
 import Recipe from './Recipe';
 import './App.css';
+import png from './images/cook-book.png'
 
 
 const App = () => {
@@ -9,7 +10,7 @@ const App = () => {
   const APP_KEY = process.env.REACT_APP_API_KEY;
   const [reciper, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("chicken")
+  const [query, setQuery] = useState("")
 
 
 
@@ -19,7 +20,7 @@ const App = () => {
     );
     const data = await response.json();
     setRecipes(data.hits);
-    console.log(data.hits);
+
 
   }
 
@@ -42,6 +43,8 @@ const App = () => {
 
   return(
     <div className="App">
+      <div className="d-flex justify-cotent-center align-items-center mylogo w-100 p-5"><img src={png} alt="" className="mylogo"/></div>
+      
       <form onSubmit={getSearch} className="search-form"> 
       <input className="search-bar" type="text" value={search} onChange={updateSearch} />
       <button className="search-button" type="submit">Search</button>
